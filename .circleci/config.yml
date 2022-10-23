@@ -12,10 +12,10 @@ jobs:
       - image: vaultwarden/server
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
-    steps:
-      - checkout
-      - run:
-          name: "Say hello"
+    # steps:
+      # - checkout
+      # - run:
+          # name: "Say hello"
           # command: docker run -d --name vaultwarden -v /vw-data/:/data/ -p 80:80 vaultwarden/server:latest
 
 # Invoke jobs via workflows
