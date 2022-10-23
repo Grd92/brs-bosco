@@ -1,13 +1,16 @@
 version: 2.1
+orbs:
+  docker: circleci/docker@1.7.0
 jobs:
-  docker:
-    - image: vaultwarden/server
-  steps:
-    - checkout
-    - run:
-      name: say hello
-      command: echo "hello!"
+  example-job:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - docker/build:
+          image: vaultwarden/server 
+
 workflows:
-  run-jobs:
+  example-workflow:
     jobs:
-      - build
+      - example-job
